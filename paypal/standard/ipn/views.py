@@ -28,7 +28,7 @@ def ipn(request, item_check_callable=None):
     # Assuming the tolerant parsing of QueryDict and an ASCII-like encoding,
     # such as windows-1252, latin1 or UTF8, the following will work:
 
-    encoding = request.POST.get('charset', None)
+    encoding = request.POST.get('charset', 'utf-8')
 
     if encoding is None:
         flag = "Invalid form - no charset passed, can't decode"
